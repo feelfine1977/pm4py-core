@@ -1,0 +1,48 @@
+case_id;activity;timestamp;costs;org:resource
+1;Create Purchase Request;2021-11-05 14:32:00+01:00;50;Matthias
+1;Create Purchase Order;2021-11-30 15:06:00+01:00;400;Stephen
+1;Create Invoice;2021-12-06 16:34:00+01:00;100;Eilen
+1;Create Goods Receipt;2022-01-06 09:18:00+01:00;200;Sarah
+1;Pay Invoice;2022-01-22 05:16:00+01:00;200;Stephen
+2;Create Purchase Order;2021-11-30 15:06:00+01:00;400;Julia
+2;Create Invoice;2021-12-06 16:34:00+01:00;100;Eilen
+2;Pay Invoice;2022-01-22 05:16:00+01:00;200;Stephen
+3;Create Purchase Order;2021-11-30 15:06:00+01:00;400;Stephen
+3;Create Invoice;2021-12-06 16:34:00+01:00;100;Eilen
+3;Create Goods Receipt;2022-01-06 09:18:00+01:00;200;Sarah
+3;Pay Invoice;2022-01-22 05:16:00+01:00;200;Stephen
+4;Create Purchase Order;2021-11-30 15:06:00+01:00;400;Stephen
+4;Create Invoice;2021-12-06 16:34:00+01:00;100;Eilen
+4;Create Goods Receipt;2022-01-06 09:18:00+01:00;200;Sarah
+6;Create Purchase Request;2021-11-05 14:32:00+01:00;50;Matthias
+6;Create Purchase Order;2021-11-30 15:06:00+01:00;400;Stephen
+6;Create Invoice;2021-12-06 16:34:00+01:00;100;Eilen
+6;Create Goods Receipt;2022-01-06 09:18:00+01:00;200;Sarah
+6;Pay Invoice;2022-01-22 05:16:00+01:00;200;Stephen
+7;Create Purchase Request;2021-11-05 14:32:00+01:00;50;Matthias
+7;Create Purchase Order;2021-11-30 15:06:00+01:00;400;Stephen
+7;Create Invoice;2021-12-06 16:34:00+01:00;100;Eilen
+7;Create Invoice;2021-12-07 16:34:00+01:00;100;Eilen
+7;Create Goods Receipt;2022-01-06 09:18:00+01:00;200;Sarah
+7;Pay Invoice;2022-01-22 05:16:00+01:00;200;Stephen
+8;Create Purchase Order;2021-11-30 15:06:00+01:00;400;Julia
+8;Create Invoice;2021-12-06 16:34:00+01:00;100;Eilen
+8;Pay Invoice;2022-01-22 05:16:00+01:00;200;Stephen
+9;Create Purchase Order;2021-11-30 15:06:00+01:00;400;Stephen
+9;Create Invoice;2021-12-06 16:34:00+01:00;100;Eilen
+9;Create Goods Receipt;2022-01-06 09:18:00+01:00;200;Sarah
+9;Create Goods Receipt;2022-01-07 09:18:00+01:00;200;Sarah
+9;Create Goods Receipt;2022-01-12 09:18:00+01:00;200;Sarah
+9;Create Goods Receipt;2022-01-16 09:18:00+01:00;200;Sarah
+9;Pay Invoice;2022-01-22 05:16:00+01:00;200;Stephen
+10;Create Purchase Order;2021-11-30 15:06:00+01:00;400;Stephen
+10;Create Invoice;2021-12-06 16:34:00+01:00;100;Eilen
+10;Create Goods Receipt;2022-01-06 09:18:00+01:00;200;Sarah
+11;Create Purchase Order;2021-11-30 15:06:00+01:00;400;Stephen
+12;Create Purchase Request;2021-11-05 14:32:00+01:00;50;Matthias
+12;Create Purchase Order;2021-11-30 15:06:00+01:00;400;Stephen
+13;Create Purchase Request;2021-11-05 14:32:00+01:00;50;Matthias
+13;Create Purchase Order;2021-11-30 15:06:00+01:00;400;Stephen
+13;Create Purchase Order;2021-11-31 15:06:00+01:00;400;Stephen
+13;Create Purchase Order;2021-11-22 15:06:00+01:00;400;Stephen
+13;Create Purchase Order;2021-11-15 15:06:00+01:00;400;Stephen
