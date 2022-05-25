@@ -48,7 +48,10 @@ __TYPE_CORRESPONDENCE = {
     "datetime": xes_util.TAG_DATE,
     "Timestamp": xes_util.TAG_DATE,
     "bool": xes_util.TAG_BOOLEAN,
-    "dict": xes_util.TAG_LIST
+    "dict": xes_util.TAG_LIST,
+    "numpy.int64": xes_util.TAG_INT,
+    "numpy.float64": xes_util.TAG_FLOAT,
+    "numpy.datetime64": xes_util.TAG_DATE
 }
 # if a type is not found in the previous list, then default to string
 __DEFAULT_TYPE = xes_util.TAG_STRING
@@ -287,7 +290,7 @@ def export_log_tree(log, parameters=None):
     """
     # If the log is in log_instance.EventStream, then transform it into log_instance.EventLog format
     if type(log) is log_instance.EventStream:
-        log = log_converter.apply(log)
+        log = log_converter.apply(log, variant=log_converter.Variants.TO_EVENT_LOG, parameters=parameters)
     root = etree.Element(xes_util.TAG_LOG)
     root.set(xes_util.TAG_VERSION, xes_util.VALUE_XES_VERSION)
     root.set(xes_util.TAG_FEATURES, xes_util.VALUE_XES_FEATURES)

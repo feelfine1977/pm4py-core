@@ -16,9 +16,7 @@
 '''
 import copy
 import heapq
-import multiprocessing
 import pkgutil
-from concurrent.futures import ProcessPoolExecutor
 from enum import Enum
 from typing import List, Any, Optional
 
@@ -33,6 +31,7 @@ from typing import Optional, Dict, Any, Union, Tuple
 from pm4py.objects.process_tree.obj import ProcessTree
 from pm4py.objects.log.obj import EventLog, Trace
 from pm4py.util import typing
+from pm4py.objects.conversion.log import converter as log_converter
 
 
 class Parameters(Enum):
@@ -302,6 +301,8 @@ def apply_multiprocessing(obj: Union[EventLog, Trace], pt: ProcessTree, paramete
     if parameters is None:
         parameters = {}
 
+    import multiprocessing
+
     leaves = frozenset(pt_util.get_leaves_as_tuples(pt))
     activity_key = exec_utils.get_param_value(Parameters.ACTIVITY_KEY, parameters, xes_constants.DEFAULT_NAME_KEY)
     num_cores = exec_utils.get_param_value(Parameters.CORES, parameters, multiprocessing.cpu_count() - 2)
@@ -310,6 +311,8 @@ def apply_multiprocessing(obj: Union[EventLog, Trace], pt: ProcessTree, paramete
         variant = tuple(x[activity_key] for x in obj)
         return align_variant(variant, leaves, pt)
     else:
+        from concurrent.futures import ProcessPoolExecutor
+
         with ProcessPoolExecutor(max_workers=num_cores) as executor:
             ret = []
             best_worst_cost = align_variant([], leaves, pt)["cost"]
@@ -363,6 +366,8 @@ def apply(obj: Union[EventLog, Trace], pt: ProcessTree, parameters: Optional[Dic
     """
     if parameters is None:
         parameters = {}
+
+    obj = log_converter.apply(obj, variant=log_converter.Variants.TO_EVENT_LOG, parameters=parameters)
 
     leaves = frozenset(pt_util.get_leaves_as_tuples(pt))
     activity_key = exec_utils.get_param_value(Parameters.ACTIVITY_KEY, parameters, xes_constants.DEFAULT_NAME_KEY)
